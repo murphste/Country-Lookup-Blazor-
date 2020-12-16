@@ -40,8 +40,6 @@ namespace CountriesOfTheWorld.Pages
 
 
                 // Logic to handle a search query
-                
-
                 if (string.IsNullOrWhiteSpace(SearchTerm))
                 {
                     data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);

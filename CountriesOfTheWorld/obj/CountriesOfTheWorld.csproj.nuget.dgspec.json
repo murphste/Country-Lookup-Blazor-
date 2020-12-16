@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Stephen's Laptop\\Documents\\College Files\\Year 4\\Semester 7\\EAD - Enterprise App Development 1\\CA3\\Local Non Repo\\CountriesOfTheWorld\\CountriesOfTheWorld.csproj": {}
+    "C:\\Users\\Stephen's Laptop\\Documents\\College Files\\Year 4\\Semester 7\\EAD - Enterprise App Development 1\\CA3\\Local Repo\\ead_ca3\\CountriesOfTheWorld\\CountriesOfTheWorld.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Stephen's Laptop\\Documents\\College Files\\Year 4\\Semester 7\\EAD - Enterprise App Development 1\\CA3\\Local Non Repo\\CountriesOfTheWorld\\CountriesOfTheWorld.csproj": {
+    "C:\\Users\\Stephen's Laptop\\Documents\\College Files\\Year 4\\Semester 7\\EAD - Enterprise App Development 1\\CA3\\Local Repo\\ead_ca3\\CountriesOfTheWorld\\CountriesOfTheWorld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Stephen's Laptop\\Documents\\College Files\\Year 4\\Semester 7\\EAD - Enterprise App Development 1\\CA3\\Local Non Repo\\CountriesOfTheWorld\\CountriesOfTheWorld.csproj",
+        "projectUniqueName": "C:\\Users\\Stephen's Laptop\\Documents\\College Files\\Year 4\\Semester 7\\EAD - Enterprise App Development 1\\CA3\\Local Repo\\ead_ca3\\CountriesOfTheWorld\\CountriesOfTheWorld.csproj",
         "projectName": "CountriesOfTheWorld",
-        "projectPath": "C:\\Users\\Stephen's Laptop\\Documents\\College Files\\Year 4\\Semester 7\\EAD - Enterprise App Development 1\\CA3\\Local Non Repo\\CountriesOfTheWorld\\CountriesOfTheWorld.csproj",
+        "projectPath": "C:\\Users\\Stephen's Laptop\\Documents\\College Files\\Year 4\\Semester 7\\EAD - Enterprise App Development 1\\CA3\\Local Repo\\ead_ca3\\CountriesOfTheWorld\\CountriesOfTheWorld.csproj",
         "packagesPath": "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Stephen's Laptop\\Documents\\College Files\\Year 4\\Semester 7\\EAD - Enterprise App Development 1\\CA3\\Local Non Repo\\CountriesOfTheWorld\\obj\\",
+        "outputPath": "C:\\Users\\Stephen's Laptop\\Documents\\College Files\\Year 4\\Semester 7\\EAD - Enterprise App Development 1\\CA3\\Local Repo\\ead_ca3\\CountriesOfTheWorld\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

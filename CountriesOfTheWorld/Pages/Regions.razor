@@ -4,34 +4,65 @@
 
 <h5>Data by World Region</h5>
 
-<div class="row">
-            <div class="col-sm-2">
-                <label>
-                    <input type="radio" name="option" @bind="isSelectedEurope" @onclick="@HandleOnSelectedEurope">Europe
-                </label>
-            </div>
-            <div class="col-sm-2">
-                <label>
-                    <input type="radio" name="option" @bind="isSelectedAsia" @onclick="@HandleOnSelectedAsia">Asia
-                </label>
-            </div>
-            <div class="col-sm-2">
-                <label>
-                    <input type="radio" name="option" @bind="isSelectedAfrica" @onclick="@HandleOnSelectedAfrica">Africa
-                </label>
-            </div>
-            <div class="col-sm-2">
-                <label>
-                    <input type="radio" name="option" @bind="isSelectedAmericas" @onclick="@HandleOnSelectedAmericas">Americas
-                </label>
-            </div>
-            <div class="col-sm-2">
-                <label>
-                    <input type="radio" name="option" @bind="isSelectedOceania" @onclick="@HandleOnSelectedOceania">Oceania
-                </label>
-            </div>
+@*<div class="row">
+        <div class="col-sm-2">
+            <label>
+                <input type="radio" name="option" @bind="isSelectedEurope" @onclick="@HandleOnSelectedEurope">Europe
+            </label>
         </div>
+        <div class="col-sm-2">
+            <label>
+                <input type="radio" name="option" @bind="isSelectedEurope" @onclick="@HandleOnSelectedAsia">Asia
+            </label>
+        </div>
+        <div class="col-sm-2">
+            <label>
+                <input type="radio" name="option" @bind="isSelectedAfrica" @onclick="@HandleOnSelectedAfrica">Africa
+            </label>
+        </div>
+        <div class="col-sm-2">
+            <label>
+                <input type="radio" name="option" @bind="isSelectedAmericas" @onclick="@HandleOnSelectedAmericas">Americas
+            </label>
+        </div>
+        <div class="col-sm-2">
+            <label>
+                <input type="radio" name="option" @bind="isSelectedOceania" @onclick="@HandleOnSelectedOceania">Oceania
+            </label>
+        </div>
+    </div>*@
 
+<div class="mb-3 row">
+    <Radzen.Blazor.RadzenButton Text="Get Global Data" Click="@GetDataAsync" />
+</div>
+<br />
+<br />
+<div class="mt-3 mb-3 row">
+    <div class="radzen-button">
+        <Radzen.Blazor.RadzenButton Text="Europe" Click="@GetEuropeDataAsync" />
+    </div>
+    <div class="ml-1 radzen-button">
+        <Radzen.Blazor.RadzenButton Text="Asia" Click="@GetAsiaDataAsync" />
+    </div>
+    <div class="ml-1 radzen-button">
+        <Radzen.Blazor.RadzenButton Text="Africa" Click="@GetAfricaDataAsync" />
+    </div>
+    <div class="ml-1 radzen-button">
+        <Radzen.Blazor.RadzenButton Text="Americas" Click="@GetAmericasDataAsync" />
+    </div>
+    <div class="ml-1 radzen-button">
+        <Radzen.Blazor.RadzenButton Text="Oceania" Click="@GetOceaniaDataAsync" />
+    </div>
+</div>
+
+
+@*<div class="btn-group" role="group" @bind="@region" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary" value="europe"  @onclick="@GetDataAsync">Europe</button>
+        <button type="button" class="btn btn-secondary" value="asia" @onclick="@GetDataAsync">Asia</button>
+        <button type="button" class="btn btn-secondary" value="africa" @onclick="@GetDataAsync">Africa</button>
+        <button type="button" class="btn btn-secondary" value="americas" @onclick="@GetDataAsync">Americas</button>
+        <button type="button" class="btn btn-secondary" value="oceania" @onclick="@GetDataAsync">Oceania</button>
+    </div>*@
 
 
 
@@ -41,14 +72,14 @@
 
 @if (data == null)
 {
-    <p><em>This page should display data according to the region selected above.</em></p>
-    <p>I've done a good bit in source code to try to get this working - I feel like I was very close. Please review it.</p>
-    }
+    <p><em>Ooops... Looks like somethings gone wrong. This page should display data according to the region selected above.</em></p>
+    
+}
 else
 {
 
 
-    <table class="table">
+    @*<table class="table">
         <thead>
             <tr>
                 <th>Country</th>
@@ -61,6 +92,34 @@ else
                 <tr>
                     <td>Country: @d.name</td>
                     <td>Capital: @d.capital</td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <th>Native Name</th>
+                <th>Capital City</th>
+                <th>Region</th>
+                <th>Sub-Region</th>
+                <th>Population</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var d in data)
+            {
+                <tr>
+                    <td>@d.name</td>
+                    <td>@d.nativeName</td>
+                    <td>@d.capital</td>
+                    <td>@d.region</td>
+                    <td>@d.subregion</td>
+                    <td>@d.population</td>
                 </tr>
             }
         </tbody>
@@ -77,39 +136,64 @@ else
         public List<CountryData> MyArray { get; set; }
     }
 
+    // **** Radio Button / Checkbox:
+
+
     // List of country data based on model class, all attributes are contained within
     private List<CountryData> data;
     private string errorMsg;
     private bool found;
+    //private string region = "europe";
     [Parameter] public bool isSelectedEurope { get; set; } = false;
     [Parameter] public bool isSelectedAsia { get; set; } = false;
     [Parameter] public bool isSelectedAfrica { get; set; } = false;
     [Parameter] public bool isSelectedAmericas { get; set; } = false;
     [Parameter] public bool isSelectedOceania { get; set; } = false;
 
+    [Parameter] public string Region { get; set; } = "";
 
-    public int ButtonVal { get; set; }
+
+
+
+
+    // An approach I tried - using the html elements value="" field
+
+    @*public int ButtonVal { get; set; }*@
+
+    @*private readonly Regions regionsModel = new Regions();
+        public void RadioButtonClicked(int value)
+        {
+            regionsModel.ButtonVal = value;
+            if (ButtonVal == 1)
+            {
+                //HandleOnSelectedEurope();
+            }
+            else if (ButtonVal == 2)
+            {
+                //HandleOnSelectedAsia();
+            }
+
+        }*@
 
 
 
     @*private readonly Regions regionsModel = new Regions();
-    public void RadioButtonClicked(int value)
-    {
-        regionsModel.ButtonVal = value;
-        if (ButtonVal == 1)
+        public void RadioButtonClicked(int value)
         {
-        }
-        else if (ButtonVal == 2)
-        {
-            //HandleOnSelectedAsia();
-        }
-
-    }*@
-
+            regionsModel.Region = value;
+            if (ButtonVal == 1)
+            {
+                //HandleOnSelectedEurope();
+            }
+            else if (ButtonVal == 2)
+            {
+                //HandleOnSelectedAsia();
+            }
+        }*@
 
 
     // Toggle state handlers for radio buttons
-    private void HandleOnSelectedEurope()
+    void HandleOnSelectedEurope()
     {
         // Check existing state first (although pointless really, as Radio button)
         if (isSelectedEurope)
@@ -123,7 +207,7 @@ else
         }
     }
 
-    private void HandleOnSelectedAsia()
+    void HandleOnSelectedAsia()
     {
         if (isSelectedAsia)
         {
@@ -137,7 +221,7 @@ else
         }
     }
 
-    private void HandleOnSelectedAfrica()
+    void HandleOnSelectedAfrica()
     {
         if (isSelectedAfrica)
         {
@@ -151,7 +235,7 @@ else
         }
     }
 
-    private void HandleOnSelectedAmericas()
+    void HandleOnSelectedAmericas()
     {
         if (isSelectedAmericas)
         {
@@ -165,7 +249,7 @@ else
         }
     }
 
-    private void HandleOnSelectedOceania()
+    void HandleOnSelectedOceania()
     {
         if (isSelectedOceania)
         {
@@ -183,48 +267,51 @@ else
     @*public event Action OnRegionSelect;
 
 
-    private async Task EuropeToggle(MouseEventArgs e)
-    {
+        private async Task EuropeToggle(MouseEventArgs e)
+        {
 
 
-        bool isClicked = false;
+            bool isClicked = false;
 
-    }*@
+        }*@
 
     // following: visualstudiomagazine.com/articles/2018/10/01/blazor-event-handling.aspx
 
-    // Regional GETS
+    // Tried making this dynamic - ie For radio or checkbox selection, update region, as you've seen
     private async Task GetDataAsync()
     {
         try
         {
 
-            string europeUri = "https://restcountries.eu/rest/v2/region/europe";
-            string asiaUri = "https://restcountries.eu/rest/v2/region/asia";
-            string africaUri = "https://restcountries.eu/rest/v2/region/africa";
-            string americasUri = "https://restcountries.eu/rest/v2/region/americas";
-            string oceaniaUri = "https://restcountries.eu/rest/v2/region/oceania";
-            // Logic to select data based on user selected region
-            if (isSelectedEurope == true)
-            {
-                data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
-            }
-            else if (isSelectedAsia == true)
-            {
-                data = await Http.GetFromJsonAsync<List<CountryData>>(asiaUri);
-            }
-            else if (isSelectedAfrica == true)
-            {
-                data = await Http.GetFromJsonAsync<List<CountryData>>(africaUri);
-            }
-            else if (isSelectedAmericas == true)
-            {
-                data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
-            }
-            else if (isSelectedOceania == true)
-            {
-                data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
-            }
+            string allUri = "https://restcountries.eu/rest/v2/all";
+            data = await Http.GetFromJsonAsync<List<CountryData>>(allUri);
+
+            @*string europeUri = "https://restcountries.eu/rest/v2/region/europe";
+                string asiaUri = "https://restcountries.eu/rest/v2/region/asia";
+                string africaUri = "https://restcountries.eu/rest/v2/region/africa";
+                string americasUri = "https://restcountries.eu/rest/v2/region/americas";
+                string oceaniaUri = "https://restcountries.eu/rest/v2/region/oceania";
+                // Logic to select data based on user selected region
+                if (isSelectedEurope == true)
+                {
+                    data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+                }
+                else if (isSelectedAsia == true)
+                {
+                    data = await Http.GetFromJsonAsync<List<CountryData>>(asiaUri);
+                }
+                else if (isSelectedAfrica == true)
+                {
+                    data = await Http.GetFromJsonAsync<List<CountryData>>(africaUri);
+                }
+                else if (isSelectedAmericas == true)
+                {
+                    data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
+                }
+                else if (isSelectedOceania == true)
+                {
+                    data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
+                }*@
 
             errorMsg = String.Empty;
             found = true;
@@ -236,6 +323,94 @@ else
             errorMsg = e.Message;
         }
     }
+
+    // Plan B approach - Less complex, Regional GETS - One method each, called directly
+    private async Task GetEuropeDataAsync()
+    {
+        try
+        {
+            string europeUri = "https://restcountries.eu/rest/v2/region/europe";
+            data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+            errorMsg = String.Empty;
+            found = true;
+        }
+        catch (Exception e)
+        {
+            found = false;
+            errorMsg = e.Message;
+        }
+    }
+
+
+    // Regional GETS - For radio or chedkbox
+    private async Task GetAsiaDataAsync()
+    {
+        try
+        {
+            string europeUri = "https://restcountries.eu/rest/v2/region/asia";
+            data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+            errorMsg = String.Empty;
+            found = true;
+        }
+        catch (Exception e)
+        {
+            found = false;
+            errorMsg = e.Message;
+        }
+    }
+
+
+    // Regional GETS - For radio or chedkbox
+    private async Task GetAfricaDataAsync()
+    {
+        try
+        {
+            string europeUri = "https://restcountries.eu/rest/v2/region/africa";
+            data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+            errorMsg = String.Empty;
+            found = true;
+        }
+        catch (Exception e)
+        {
+            found = false;
+            errorMsg = e.Message;
+        }
+    }
+
+    // Regional GETS - For radio or chedkbox
+    private async Task GetAmericasDataAsync()
+    {
+        try
+        {
+            string europeUri = "https://restcountries.eu/rest/v2/region/americas";
+            data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+            errorMsg = String.Empty;
+            found = true;
+        }
+        catch (Exception e)
+        {
+            found = false;
+            errorMsg = e.Message;
+        }
+    }
+
+    // Regional GETS - For radio or chedkbox
+    private async Task GetOceaniaDataAsync()
+    {
+        try
+        {
+            string europeUri = "https://restcountries.eu/rest/v2/region/oceania";
+            data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+            errorMsg = String.Empty;
+            found = true;
+        }
+        catch (Exception e)
+        {
+            found = false;
+            errorMsg = e.Message;
+        }
+    }
+
 
 
     protected override async Task OnInitializedAsync()

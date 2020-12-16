@@ -12,77 +12,77 @@ namespace CountriesOfTheWorld.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\_Imports.razor"
+#line 1 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\_Imports.razor"
+#line 2 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\_Imports.razor"
+#line 3 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\_Imports.razor"
+#line 4 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\_Imports.razor"
+#line 5 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\_Imports.razor"
+#line 6 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\_Imports.razor"
+#line 7 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\_Imports.razor"
+#line 8 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\_Imports.razor"
+#line 9 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\_Imports.razor"
 using CountriesOfTheWorld;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\_Imports.razor"
+#line 10 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\_Imports.razor"
 using CountriesOfTheWorld.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\_Imports.razor"
+#line 11 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\_Imports.razor"
 using System.Linq;
 
 #line default
@@ -97,7 +97,7 @@ using System.Linq;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 70 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\Pages\Regions.razor"
+#line 129 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\Pages\Regions.razor"
        
 
 
@@ -108,20 +108,27 @@ using System.Linq;
         public List<CountryData> MyArray { get; set; }
     }
 
+    // **** Radio Button / Checkbox:
+
+
     // List of country data based on model class, all attributes are contained within
     private List<CountryData> data;
     private string errorMsg;
     private bool found;
+    //private string region = "europe";
     [Parameter] public bool isSelectedEurope { get; set; } = false;
     [Parameter] public bool isSelectedAsia { get; set; } = false;
     [Parameter] public bool isSelectedAfrica { get; set; } = false;
     [Parameter] public bool isSelectedAmericas { get; set; } = false;
     [Parameter] public bool isSelectedOceania { get; set; } = false;
 
+    [Parameter] public string Region { get; set; } = "";
 
-    public int ButtonVal { get; set; }
 
 
+
+
+    // An approach I tried - using the html elements value="" field
 
     
 
@@ -129,13 +136,12 @@ using System.Linq;
 #line hidden
 #nullable disable
 #nullable restore
-#line 107 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\Pages\Regions.razor"
-       
-
+#line 192 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\Pages\Regions.razor"
+           
 
 
     // Toggle state handlers for radio buttons
-    private void HandleOnSelectedEurope()
+    void HandleOnSelectedEurope()
     {
         // Check existing state first (although pointless really, as Radio button)
         if (isSelectedEurope)
@@ -149,7 +155,7 @@ using System.Linq;
         }
     }
 
-    private void HandleOnSelectedAsia()
+    void HandleOnSelectedAsia()
     {
         if (isSelectedAsia)
         {
@@ -163,7 +169,7 @@ using System.Linq;
         }
     }
 
-    private void HandleOnSelectedAfrica()
+    void HandleOnSelectedAfrica()
     {
         if (isSelectedAfrica)
         {
@@ -177,7 +183,7 @@ using System.Linq;
         }
     }
 
-    private void HandleOnSelectedAmericas()
+    void HandleOnSelectedAmericas()
     {
         if (isSelectedAmericas)
         {
@@ -191,7 +197,7 @@ using System.Linq;
         }
     }
 
-    private void HandleOnSelectedOceania()
+    void HandleOnSelectedOceania()
     {
         if (isSelectedOceania)
         {
@@ -212,43 +218,28 @@ using System.Linq;
 #line hidden
 #nullable disable
 #nullable restore
-#line 192 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\Pages\Regions.razor"
-       
+#line 276 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\Pages\Regions.razor"
+           
 
     // following: visualstudiomagazine.com/articles/2018/10/01/blazor-event-handling.aspx
 
-    // Regional GETS
+    // Tried making this dynamic - ie For radio or checkbox selection, update region, as you've seen
     private async Task GetDataAsync()
     {
         try
         {
 
-            string europeUri = "https://restcountries.eu/rest/v2/region/europe";
-            string asiaUri = "https://restcountries.eu/rest/v2/region/asia";
-            string africaUri = "https://restcountries.eu/rest/v2/region/africa";
-            string americasUri = "https://restcountries.eu/rest/v2/region/americas";
-            string oceaniaUri = "https://restcountries.eu/rest/v2/region/oceania";
-            // Logic to select data based on user selected region
-            if (isSelectedEurope == true)
-            {
-                data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
-            }
-            else if (isSelectedAsia == true)
-            {
-                data = await Http.GetFromJsonAsync<List<CountryData>>(asiaUri);
-            }
-            else if (isSelectedAfrica == true)
-            {
-                data = await Http.GetFromJsonAsync<List<CountryData>>(africaUri);
-            }
-            else if (isSelectedAmericas == true)
-            {
-                data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
-            }
-            else if (isSelectedOceania == true)
-            {
-                data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
-            }
+            string allUri = "https://restcountries.eu/rest/v2/all";
+            data = await Http.GetFromJsonAsync<List<CountryData>>(allUri);
+
+            
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 314 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\Pages\Regions.razor"
+                   
 
             errorMsg = String.Empty;
             found = true;
@@ -260,6 +251,94 @@ using System.Linq;
             errorMsg = e.Message;
         }
     }
+
+    // Plan B approach - Less complex, Regional GETS - One method each, called directly
+    private async Task GetEuropeDataAsync()
+    {
+        try
+        {
+            string europeUri = "https://restcountries.eu/rest/v2/region/europe";
+            data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+            errorMsg = String.Empty;
+            found = true;
+        }
+        catch (Exception e)
+        {
+            found = false;
+            errorMsg = e.Message;
+        }
+    }
+
+
+    // Regional GETS - For radio or chedkbox
+    private async Task GetAsiaDataAsync()
+    {
+        try
+        {
+            string europeUri = "https://restcountries.eu/rest/v2/region/asia";
+            data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+            errorMsg = String.Empty;
+            found = true;
+        }
+        catch (Exception e)
+        {
+            found = false;
+            errorMsg = e.Message;
+        }
+    }
+
+
+    // Regional GETS - For radio or chedkbox
+    private async Task GetAfricaDataAsync()
+    {
+        try
+        {
+            string europeUri = "https://restcountries.eu/rest/v2/region/africa";
+            data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+            errorMsg = String.Empty;
+            found = true;
+        }
+        catch (Exception e)
+        {
+            found = false;
+            errorMsg = e.Message;
+        }
+    }
+
+    // Regional GETS - For radio or chedkbox
+    private async Task GetAmericasDataAsync()
+    {
+        try
+        {
+            string europeUri = "https://restcountries.eu/rest/v2/region/americas";
+            data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+            errorMsg = String.Empty;
+            found = true;
+        }
+        catch (Exception e)
+        {
+            found = false;
+            errorMsg = e.Message;
+        }
+    }
+
+    // Regional GETS - For radio or chedkbox
+    private async Task GetOceaniaDataAsync()
+    {
+        try
+        {
+            string europeUri = "https://restcountries.eu/rest/v2/region/oceania";
+            data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+            errorMsg = String.Empty;
+            found = true;
+        }
+        catch (Exception e)
+        {
+            found = false;
+            errorMsg = e.Message;
+        }
+    }
+
 
 
     protected override async Task OnInitializedAsync()
