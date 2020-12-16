@@ -9,7 +9,6 @@ namespace CountriesOfTheWorld.Pages
     #line hidden
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
@@ -82,8 +81,15 @@ using CountriesOfTheWorld.Shared;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
-    public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 11 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\_Imports.razor"
+using System.Linq;
+
+#line default
+#line hidden
+#nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/regions")]
+    public partial class Regions : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -91,95 +97,69 @@ using CountriesOfTheWorld.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\Pages\FetchData.razor"
-      
+#line 68 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\Pages\Regions.razor"
+       
 
 
-    private string country = "ireland";
+    // Need instance of Root as data (response obj) needs to contain an IEnumerable to iterate over
+    // Set this up to contain objects of the model class CountryData as below
+    public class Root
+    {
+        public List<CountryData> MyArray { get; set; }
+    }
+
+    // List of country data based on model class, all attributes are contained within
+    private List<CountryData> data;
     private string errorMsg;
-    private Root[] data;
+    private bool found;
+    public string Region { get; set; }
 
-    protected override async Task OnInitializedAsync()
+
+    //Regional GETS
+
+    private async Task GetDataAsync()
     {
         try
         {
-            string apiLinkEurope = "https://restcountries.eu/rest/v2/region/europe";
-            //string apiLink = "https://restcountries.eu/rest/v2/name/" + country + "?fullText=true";
-            data = await Http.GetFromJsonAsync<Root[]>(apiLinkEurope);
+            string uri = "https://restcountries.eu/rest/v2/region/" + Region;
+            data = await Http.GetFromJsonAsync<List<CountryData>>(uri);
             errorMsg = String.Empty;
+            found = true;
+
         }
         catch (Exception e)
         {
+            found = false;
             errorMsg = e.Message;
         }
-
     }
 
-    // Base classes
-    public class Currency
+
+    protected override async Task OnInitializedAsync()
     {
-        public string code { get; set; }
-        public string name { get; set; }
-        public string symbol { get; set; }
+        await GetDataAsync();
     }
 
-    public class Language
+
+    // Used for searching by user
+    private string SearchQuery { get; set; }
+
+    // Boolean method to display whether or not user enters letters in either upper or lowercase
+    public bool IsVisible(CountryData country)
     {
-        public string iso639_1 { get; set; }
-        public string iso639_2 { get; set; }
-        public string name { get; set; }
-        public string nativeName { get; set; }
+        if (string.IsNullOrEmpty(SearchQuery))
+            return true;
+
+        if (country.name.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        if (country.name.ToString().StartsWith(SearchQuery))
+            return true;
+
+        return false;
     }
 
-    public class Translations
-    {
-        public string de { get; set; }
-        public string es { get; set; }
-        public string fr { get; set; }
-        public string ja { get; set; }
-        public string it { get; set; }
-        public string br { get; set; }
-        public string pt { get; set; }
-        public string nl { get; set; }
-        public string hr { get; set; }
-        public string fa { get; set; }
-    }
 
-    public class RegionalBloc
-    {
-        public string acronym { get; set; }
-        public string name { get; set; }
-        public List<object> otherAcronyms { get; set; }
-        public List<object> otherNames { get; set; }
-    }
-
-    public class Root
-    {
-        public string name { get; set; }
-        public List<string> topLevelDomain { get; set; }
-        public string alpha2Code { get; set; }
-        public string alpha3Code { get; set; }
-        public List<string> callingCodes { get; set; }
-        public string capital { get; set; }
-        public List<string> altSpellings { get; set; }
-        public string region { get; set; }
-        public string subregion { get; set; }
-        public int population { get; set; }
-        public List<double> latlng { get; set; }
-        public string demonym { get; set; }
-        public double area { get; set; }
-        public double gini { get; set; }
-        public List<string> timezones { get; set; }
-        public List<string> borders { get; set; }
-        public string nativeName { get; set; }
-        public string numericCode { get; set; }
-        public List<Currency> currencies { get; set; }
-        public List<Language> languages { get; set; }
-        public Translations translations { get; set; }
-        public string flag { get; set; }
-        public List<RegionalBloc> regionalBlocs { get; set; }
-        public string cioc { get; set; }
-    }
 
 #line default
 #line hidden

@@ -1,0 +1,133 @@
+﻿@page "/regions"
+@inject HttpClient Http
+
+
+<h5>Country Data</h5>
+
+
+
+@*<div class="form-check-inline">
+    <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio" @bind="Region" @onclick="@GetDataAsync">Europe
+        
+    </label>
+</div>
+<div class="form-check-inline">
+    <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio" @bind="Region" @onclick="@GetDataAsync">Asia
+    </label>
+</div>
+<div class="form-check-inline">
+    <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio" @bind="Region" @onclick="@GetDataAsync">Africa
+    </label>
+</div>
+<div class="form-check-inline">
+    <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio" @bind="Region" @onclick="@GetDataAsync">Americas
+    </label>
+</div>
+<div class="form-check-inline">
+    <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio" @bind="Region" @onclick="@GetDataAsync">Oceana
+    </label>
+</div>*@
+
+
+
+
+@if (data == null)
+{
+    <p><em>Loading.....</em></p> }
+else
+{
+
+
+
+    // User selection: choose Africa, Americas, Asia, Europe, Oceania
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Capital City</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var d in data)
+            {
+                <tr>
+                    <td>Country: @d.name</td>
+                    <td>Capital: @d.capital</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+@code {
+
+
+    // Need instance of Root as data (response obj) needs to contain an IEnumerable to iterate over
+    // Set this up to contain objects of the model class CountryData as below
+    public class Root
+    {
+        public List<CountryData> MyArray { get; set; }
+    }
+
+    // List of country data based on model class, all attributes are contained within
+    private List<CountryData> data;
+    private string errorMsg;
+    private bool found;
+    public string Region { get; set; }
+
+
+    //Regional GETS
+
+    private async Task GetDataAsync()
+    {
+        try
+        {
+            string uri = "https://restcountries.eu/rest/v2/region/" + Region;
+            data = await Http.GetFromJsonAsync<List<CountryData>>(uri);
+            errorMsg = String.Empty;
+            found = true;
+
+        }
+        catch (Exception e)
+        {
+            found = false;
+            errorMsg = e.Message;
+        }
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetDataAsync();
+    }
+
+
+    // Used for searching by user
+    private string SearchQuery { get; set; }
+
+    // Boolean method to display whether or not user enters letters in either upper or lowercase
+    public bool IsVisible(CountryData country)
+    {
+        if (string.IsNullOrEmpty(SearchQuery))
+            return true;
+
+        if (country.name.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        if (country.name.ToString().StartsWith(SearchQuery))
+            return true;
+
+        return false;
+    }
+
+
+}
+
+
+

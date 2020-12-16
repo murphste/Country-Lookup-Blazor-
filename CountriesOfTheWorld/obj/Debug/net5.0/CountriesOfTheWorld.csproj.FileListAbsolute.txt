@@ -403,7 +403,7 @@ C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterp
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\CountriesOfTheWorld.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\CountriesOfTheWorld.RazorComponent.input.cache
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
-C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -414,7 +414,7 @@ C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterp
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\CountriesOfTheWorld.TagHelpers.output.cache
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\CountriesOfTheWorld.RazorCoreGenerate.cache
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\Razor\App.razor.g.cs
-C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
@@ -626,3 +626,17 @@ C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterp
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\ref\CountriesOfTheWorld.dll
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\CountriesOfTheWorld.pdb
 C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\CountriesOfTheWorld.csprojAssemblyReference.cache
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\RazorDeclaration\Pages\Regions.razor.g.cs
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\Razor\Pages\Regions.razor.g.cs
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\bin\Debug\net5.0\wwwroot\_framework\BlazorComponentUtilities.dll.gz
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\bin\Debug\net5.0\wwwroot\_framework\BlazorStrap.dll.gz
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\bin\Debug\net5.0\wwwroot\_framework\BlazorComponentUtilities.dll
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\bin\Debug\net5.0\wwwroot\_framework\BlazorStrap.dll
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\build-gz\7aH1cvWN.gz
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\build-gz\CA+RcCtZ.gz
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\bin\Debug\net5.0\wwwroot\_framework\Radzen.Blazor.dll.gz
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\bin\Debug\net5.0\wwwroot\_framework\System.Linq.Dynamic.Core.dll.gz
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\bin\Debug\net5.0\wwwroot\_framework\Radzen.Blazor.dll
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\bin\Debug\net5.0\wwwroot\_framework\System.Linq.Dynamic.Core.dll
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\build-gz\wG8iZ397.gz
+C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\obj\Debug\net5.0\build-gz\NCDZXvSV.gz

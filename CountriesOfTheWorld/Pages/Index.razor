@@ -1,0 +1,215 @@
+﻿@page "/"
+@inject HttpClient Http
+
+
+<h5>Country Data</h5>
+@*<input @bind-value="@SearchTerm" @bind-value:event="@CountryLookup()" placeholder="Enter a country name to search..." />*@
+@*<input @bind-value="SearchTerm" @bind-value:event="oninput" placeholder="Enter country..." />*@
+
+@*<form>
+        <legend>Search Country:</legend>
+        <input type="text" name="search" @bind-value="SearchTerm" @bind-value:event="oninput"><br>
+    </form>*@
+
+@*<form>
+        <label>Enter country:</label>
+        <input value="@SearchTerm" @oninput="@OnInputChange" placeholder="Enter country..." />
+    </form>*@
+
+<div class="mb-5 row">
+    <Radzen.Blazor.RadzenTextBox Placeholder="Search Query" @bind-Value="SearchTerm" /><Radzen.Blazor.RadzenButton Text="Search" Click="GetQueryDataAsync" />
+</div>
+
+
+@if (string.IsNullOrWhiteSpace(SearchTerm))
+{
+<div class="mt-5 countryLookupMessage">
+    <h5>To Use Country Lookup... Please search for a country!</h5>
+</div>
+}
+else
+{
+    <h5>Here is the resulting information for @SearchTerm</h5>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Native Name</th>
+                <th>Capital City</th>
+                <th>Region</th>
+                <th>Sub-Region</th>
+                <th>Population</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var d in data)
+            {
+            <tr>
+                <td>@d.nativeName</td>
+                <td>@d.capital</td>
+                <td>@d.region</td>
+                <td>@d.subregion</td>
+                <td>@d.population</td>
+            </tr>
+            }
+        </tbody>
+        </table>
+
+ //Second row of 4 tables to show collections
+<div class="row">
+    <div class="col-sm-3">
+        <table>
+            <thead>
+                <tr>
+                    <th>Timezones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @foreach (var d in data)
+                        {
+                            @foreach (var t in d.timezones)
+                            {
+                        <tr>@t</tr>
+                    }
+                        }
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-sm-3">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Currencies</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                @foreach (var d in data)
+                                {
+                                    @foreach (var t in d.currencies)
+                                    {
+                                <tr>@t.name</tr>
+                            }
+                                }
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-sm-3">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Spoken Languages</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        @foreach (var d in data)
+                                        {
+                                            @foreach (var t in d.languages)
+                                            {
+                                        <tr>@t.name</tr>
+                                    }
+                                        }
+                                        </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sm-3">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Borders</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                @foreach (var d in data)
+                                                {
+                                                    @foreach (var t in d.borders)
+                                                    {
+                                                <tr>@t</tr>
+                                                }
+                                                }
+                                                </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div> //End collections row
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+@if (data == null)
+{
+    <p><em>Loading.....</em></p>
+}
+else
+{
+
+
+
+}
+@code {
+
+    @using System.Linq;
+
+
+    // Need instance of Root as data (response obj) needs to contain an IEnumerable to iterate over
+    // Set this up to contain objects of the model class CountryData as below
+    public class Root
+    {
+        public List<CountryData> MyArray { get; set; }
+    }
+
+
+
+
+
+
+
+
+    // Used for searching by user
+    // Initalised to prevent null
+    private string SearchQuery { get; set; }
+
+    // Boolean method to display whether or not user enters letters in either upper or lowercase
+    public bool IsVisible(CountryData country)
+    {
+        if (string.IsNullOrEmpty(SearchQuery))
+            return true;
+
+        if (country.name.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        if (country.name.ToString().StartsWith(SearchQuery))
+            return true;
+
+        return false;
+    }
+
+
+}
+
+

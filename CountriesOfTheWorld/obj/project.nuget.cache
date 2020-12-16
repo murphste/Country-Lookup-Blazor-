@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Ntsdtf4kxOpaIdIlLO24DUFZzD2hZcLddor1iNsgIvtjsA13neQJcjFW1v+sYZSjQ4yXZ7K8w+SEGF+CBEUOWw==",
+  "dgSpecHash": "abNNZ41QeHWQpvpL3tYHqEHBZi7dRAoRNw8wFZf/dHGo/UBzb941Ie3eUo9kQfsy25xo7Z5lQGF2JBvYNnFJjA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Stephen's Laptop\\Documents\\College Files\\Year 4\\Semester 7\\EAD - Enterprise App Development 1\\CA3\\Local Non Repo\\CountriesOfTheWorld\\CountriesOfTheWorld.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\blazorcomponentutilities\\1.6.0\\blazorcomponentutilities.1.6.0.nupkg.sha512",
+    "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\blazorstrap\\1.3.3\\blazorstrap.1.3.3.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.1\\microsoft.aspnetcore.authorization.5.0.1.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.1\\microsoft.aspnetcore.components.5.0.1.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\5.0.1\\microsoft.aspnetcore.components.analyzers.5.0.1.nupkg.sha512",
@@ -12,6 +14,7 @@
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\5.0.1\\microsoft.aspnetcore.components.webassembly.5.0.1.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\5.0.1\\microsoft.aspnetcore.components.webassembly.devserver.5.0.1.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.1\\microsoft.aspnetcore.metadata.5.0.1.nupkg.sha512",
+    "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
@@ -28,8 +31,15 @@
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.jsinterop\\5.0.1\\microsoft.jsinterop.5.0.1.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.jsinterop.webassembly\\5.0.1\\microsoft.jsinterop.webassembly.5.0.1.nupkg.sha512",
+    "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
+    "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
+    "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\radzen.blazor\\2.18.6\\radzen.blazor.2.18.6.nupkg.sha512",
+    "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\runtime.any.system.runtime\\4.3.0\\runtime.any.system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
+    "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\system.linq.dynamic.core\\1.2.2\\system.linq.dynamic.core.1.2.2.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
+    "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\system.private.uri\\4.3.0\\system.private.uri.4.3.0.nupkg.sha512",
+    "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\system.runtime\\4.3.1\\system.runtime.4.3.1.nupkg.sha512",
     "C:\\Users\\Stephen's Laptop\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.1\\microsoft.netcore.app.runtime.browser-wasm.5.0.1.nupkg.sha512"
   ],
   "logs": []
