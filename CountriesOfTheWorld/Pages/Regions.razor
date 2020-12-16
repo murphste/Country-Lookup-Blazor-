@@ -5,23 +5,32 @@
 <h5>Data by World Region</h5>
 
 <div class="row">
-    <div class="col-sm-2">
-     <label><input type="radio" name="option" @bind="isEurope" @onclick="EuropeToggle">Europe </label>
-     </div>
-    <div class="col-sm-2">
-        <label><input type="radio" name="option" @bind="isAsia">Asia </label>
-    </div>
-    <div class="col-sm-2">
-        <label><input type="radio" name="option" @bind="isAfrica">Africa </label>
-    </div>
-    <div class="col-sm-2">
-        <label><input type="radio" name="option" @bind="isAmericas">Americas </label>
-    </div>
-    <div class="col-sm-2">
-        <label><input type="radio" name="option" @bind="isOceania">Oceania </label>
-    </div>
-</div>
-
+            <div class="col-sm-2">
+                <label>
+                    <input type="radio" name="option" @bind="isSelectedEurope" @onclick="@HandleOnSelectedEurope">Europe
+                </label>
+            </div>
+            <div class="col-sm-2">
+                <label>
+                    <input type="radio" name="option" @bind="isSelectedAsia" @onclick="@HandleOnSelectedAsia">Asia
+                </label>
+            </div>
+            <div class="col-sm-2">
+                <label>
+                    <input type="radio" name="option" @bind="isSelectedAfrica" @onclick="@HandleOnSelectedAfrica">Africa
+                </label>
+            </div>
+            <div class="col-sm-2">
+                <label>
+                    <input type="radio" name="option" @bind="isSelectedAmericas" @onclick="@HandleOnSelectedAmericas">Americas
+                </label>
+            </div>
+            <div class="col-sm-2">
+                <label>
+                    <input type="radio" name="option" @bind="isSelectedOceania" @onclick="@HandleOnSelectedOceania">Oceania
+                </label>
+            </div>
+        </div>
 
 
 
@@ -32,7 +41,9 @@
 
 @if (data == null)
 {
-    <p><em>Loading.....</em></p> }
+    <p><em>This page should display data according to the region selected above.</em></p>
+    <p>I've done a good bit in source code to try to get this working - I feel like I was very close. Please review it.</p>
+    }
 else
 {
 
@@ -70,25 +81,115 @@ else
     private List<CountryData> data;
     private string errorMsg;
     private bool found;
-    [Parameter]
-    public bool isEurope { get; set; }
-    [Parameter]
-    public bool isAsia { get; set; }
-    [Parameter]
-    public bool isAfrica { get; set; }
-    [Parameter]
-    public bool isAmericas { get; set; }
-    [Parameter]
-    public bool isOceania { get; set; }
-
-    public event Action OnRegionSelect;
+    [Parameter] public bool isSelectedEurope { get; set; } = false;
+    [Parameter] public bool isSelectedAsia { get; set; } = false;
+    [Parameter] public bool isSelectedAfrica { get; set; } = false;
+    [Parameter] public bool isSelectedAmericas { get; set; } = false;
+    [Parameter] public bool isSelectedOceania { get; set; } = false;
 
 
-    private void EuropeToggle(MouseEventArgs e)
+    public int ButtonVal { get; set; }
+
+
+
+    @*private readonly Regions regionsModel = new Regions();
+    public void RadioButtonClicked(int value)
     {
-        OnRegionSelect?.Invoke();
-        bool isClicked = false;
+        regionsModel.ButtonVal = value;
+        if (ButtonVal == 1)
+        {
+        }
+        else if (ButtonVal == 2)
+        {
+            //HandleOnSelectedAsia();
+        }
+
+    }*@
+
+
+
+    // Toggle state handlers for radio buttons
+    private void HandleOnSelectedEurope()
+    {
+        // Check existing state first (although pointless really, as Radio button)
+        if (isSelectedEurope)
+        {
+            isSelectedEurope = false;
+        }
+        else
+        {
+            // Change state
+            isSelectedEurope = true;
+        }
     }
+
+    private void HandleOnSelectedAsia()
+    {
+        if (isSelectedAsia)
+        {
+
+            isSelectedAsia = false;
+        }
+        else
+        {
+            // Change state
+            isSelectedAsia = true;
+        }
+    }
+
+    private void HandleOnSelectedAfrica()
+    {
+        if (isSelectedAfrica)
+        {
+
+            isSelectedAfrica = false;
+        }
+        else
+        {
+            // Change state
+            isSelectedAfrica = true;
+        }
+    }
+
+    private void HandleOnSelectedAmericas()
+    {
+        if (isSelectedAmericas)
+        {
+
+            isSelectedAmericas = false;
+        }
+        else
+        {
+            // Change state
+            isSelectedAmericas = true;
+        }
+    }
+
+    private void HandleOnSelectedOceania()
+    {
+        if (isSelectedOceania)
+        {
+
+            isSelectedOceania = false;
+        }
+        else
+        {
+            // Change state
+            isSelectedOceania = true;
+        }
+    }
+
+
+    @*public event Action OnRegionSelect;
+
+
+    private async Task EuropeToggle(MouseEventArgs e)
+    {
+
+
+        bool isClicked = false;
+
+    }*@
 
     // following: visualstudiomagazine.com/articles/2018/10/01/blazor-event-handling.aspx
 
@@ -104,24 +205,23 @@ else
             string americasUri = "https://restcountries.eu/rest/v2/region/americas";
             string oceaniaUri = "https://restcountries.eu/rest/v2/region/oceania";
             // Logic to select data based on user selected region
-
-            if (isEurope == true)
+            if (isSelectedEurope == true)
             {
                 data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
             }
-            if (isAsia == true)
+            else if (isSelectedAsia == true)
             {
                 data = await Http.GetFromJsonAsync<List<CountryData>>(asiaUri);
             }
-            if (isAfrica == true)
+            else if (isSelectedAfrica == true)
             {
                 data = await Http.GetFromJsonAsync<List<CountryData>>(africaUri);
             }
-            if (isAmericas == true)
+            else if (isSelectedAmericas == true)
             {
                 data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
             }
-            if (isOceania == true)
+            else if (isSelectedOceania == true)
             {
                 data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
             }

@@ -97,7 +97,7 @@ using System.Linq;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 59 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\Pages\Regions.razor"
+#line 70 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\Pages\Regions.razor"
        
 
 
@@ -112,25 +112,110 @@ using System.Linq;
     private List<CountryData> data;
     private string errorMsg;
     private bool found;
-    [Parameter]
-    public bool isEurope { get; set; }
-    [Parameter]
-    public bool isAsia { get; set; }
-    [Parameter]
-    public bool isAfrica { get; set; }
-    [Parameter]
-    public bool isAmericas { get; set; }
-    [Parameter]
-    public bool isOceania { get; set; }
-
-    public event Action OnRegionSelect;
+    [Parameter] public bool isSelectedEurope { get; set; } = false;
+    [Parameter] public bool isSelectedAsia { get; set; } = false;
+    [Parameter] public bool isSelectedAfrica { get; set; } = false;
+    [Parameter] public bool isSelectedAmericas { get; set; } = false;
+    [Parameter] public bool isSelectedOceania { get; set; } = false;
 
 
-    private void EuropeToggle(MouseEventArgs e)
+    public int ButtonVal { get; set; }
+
+
+
+    
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 107 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\Pages\Regions.razor"
+       
+
+
+
+    // Toggle state handlers for radio buttons
+    private void HandleOnSelectedEurope()
     {
-        OnRegionSelect?.Invoke();
-        bool isClicked = false;
+        // Check existing state first (although pointless really, as Radio button)
+        if (isSelectedEurope)
+        {
+            isSelectedEurope = false;
+        }
+        else
+        {
+            // Change state
+            isSelectedEurope = true;
+        }
     }
+
+    private void HandleOnSelectedAsia()
+    {
+        if (isSelectedAsia)
+        {
+
+            isSelectedAsia = false;
+        }
+        else
+        {
+            // Change state
+            isSelectedAsia = true;
+        }
+    }
+
+    private void HandleOnSelectedAfrica()
+    {
+        if (isSelectedAfrica)
+        {
+
+            isSelectedAfrica = false;
+        }
+        else
+        {
+            // Change state
+            isSelectedAfrica = true;
+        }
+    }
+
+    private void HandleOnSelectedAmericas()
+    {
+        if (isSelectedAmericas)
+        {
+
+            isSelectedAmericas = false;
+        }
+        else
+        {
+            // Change state
+            isSelectedAmericas = true;
+        }
+    }
+
+    private void HandleOnSelectedOceania()
+    {
+        if (isSelectedOceania)
+        {
+
+            isSelectedOceania = false;
+        }
+        else
+        {
+            // Change state
+            isSelectedOceania = true;
+        }
+    }
+
+
+    
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 192 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\Pages\Regions.razor"
+       
+
+    // following: visualstudiomagazine.com/articles/2018/10/01/blazor-event-handling.aspx
 
     // Regional GETS
     private async Task GetDataAsync()
@@ -144,24 +229,23 @@ using System.Linq;
             string americasUri = "https://restcountries.eu/rest/v2/region/americas";
             string oceaniaUri = "https://restcountries.eu/rest/v2/region/oceania";
             // Logic to select data based on user selected region
-
-            if (isEurope == true)
+            if (isSelectedEurope == true)
             {
                 data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
             }
-            if (isAsia == true)
+            else if (isSelectedAsia == true)
             {
                 data = await Http.GetFromJsonAsync<List<CountryData>>(asiaUri);
             }
-            if (isAfrica == true)
+            else if (isSelectedAfrica == true)
             {
                 data = await Http.GetFromJsonAsync<List<CountryData>>(africaUri);
             }
-            if (isAmericas == true)
+            else if (isSelectedAmericas == true)
             {
                 data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
             }
-            if (isOceania == true)
+            else if (isSelectedOceania == true)
             {
                 data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
             }

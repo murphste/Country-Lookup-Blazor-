@@ -2,7 +2,7 @@
 @inject HttpClient Http
 
 
-<h5>Country Data</h5>
+<h5>Geoogle</h5>
 @*<input @bind-value="@SearchTerm" @bind-value:event="@CountryLookup()" placeholder="Enter a country name to search..." />*@
 @*<input @bind-value="SearchTerm" @bind-value:event="oninput" placeholder="Enter country..." />*@
 
@@ -72,13 +72,14 @@ else
                             @foreach (var t in d.timezones)
                             {
                         <tr>@t</tr>
-                    }
+                        }
                         }
                         </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
 
             <div class="col-sm-3">
                 <table>
