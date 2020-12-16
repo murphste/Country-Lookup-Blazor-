@@ -199,11 +199,11 @@
       "mscorlib.dll": "sha256-FWPx51huC\/WJLkKCgoTEa5pzm8+4Aucxg0YuOiuOwkQ=",
       "netstandard.dll": "sha256-2ba2qAAtNUX9Qh5PFXhTMtcD\/Nra\/wyG197\/wrnxElI=",
       "System.Private.CoreLib.dll": "sha256-4wsl1v32v74UB0CTQ6+AdUTdM+9C1VraomgeCjb4Wug=",
-      "CountriesOfTheWorld.dll": "sha256-NGG632hErdU9YEu+QhxiPWe3x3AurPrLrdk8cnR33z8="
+      "CountriesOfTheWorld.dll": "sha256-8hTN\/QzTd7Zguy4zlXCAB5Ti4Nr0JvPsDqCcWvpDU7Y="
     },
     "lazyAssembly": null,
     "pdb": {
-      "CountriesOfTheWorld.pdb": "sha256-w\/YMFTliYhvsROm5Z6Z2dPTTmGmaCTidQgYo05AEXOw="
+      "CountriesOfTheWorld.pdb": "sha256-Q6uZdQI2Go8yaIAc3oGPLHET7WACD5rIoL2SFagP\/Z8="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-nXByiCO4+RYyh+A88TSSZDwAJMF7M7Up\/h6dfAA19C8=",

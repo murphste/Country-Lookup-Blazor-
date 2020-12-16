@@ -97,7 +97,7 @@ using System.Linq;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 68 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\Pages\Regions.razor"
+#line 59 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Non Repo\CountriesOfTheWorld\Pages\Regions.razor"
        
 
 
@@ -112,17 +112,60 @@ using System.Linq;
     private List<CountryData> data;
     private string errorMsg;
     private bool found;
-    public string Region { get; set; }
+    [Parameter]
+    public bool isEurope { get; set; }
+    [Parameter]
+    public bool isAsia { get; set; }
+    [Parameter]
+    public bool isAfrica { get; set; }
+    [Parameter]
+    public bool isAmericas { get; set; }
+    [Parameter]
+    public bool isOceania { get; set; }
+
+    public event Action OnRegionSelect;
 
 
-    //Regional GETS
+    private void EuropeToggle(MouseEventArgs e)
+    {
+        OnRegionSelect?.Invoke();
+        bool isClicked = false;
+    }
 
+    // Regional GETS
     private async Task GetDataAsync()
     {
         try
         {
-            string uri = "https://restcountries.eu/rest/v2/region/" + Region;
-            data = await Http.GetFromJsonAsync<List<CountryData>>(uri);
+
+            string europeUri = "https://restcountries.eu/rest/v2/region/europe";
+            string asiaUri = "https://restcountries.eu/rest/v2/region/asia";
+            string africaUri = "https://restcountries.eu/rest/v2/region/africa";
+            string americasUri = "https://restcountries.eu/rest/v2/region/americas";
+            string oceaniaUri = "https://restcountries.eu/rest/v2/region/oceania";
+            // Logic to select data based on user selected region
+
+            if (isEurope == true)
+            {
+                data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+            }
+            if (isAsia == true)
+            {
+                data = await Http.GetFromJsonAsync<List<CountryData>>(asiaUri);
+            }
+            if (isAfrica == true)
+            {
+                data = await Http.GetFromJsonAsync<List<CountryData>>(africaUri);
+            }
+            if (isAmericas == true)
+            {
+                data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
+            }
+            if (isOceania == true)
+            {
+                data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
+            }
+
             errorMsg = String.Empty;
             found = true;
 
@@ -140,24 +183,6 @@ using System.Linq;
         await GetDataAsync();
     }
 
-
-    // Used for searching by user
-    private string SearchQuery { get; set; }
-
-    // Boolean method to display whether or not user enters letters in either upper or lowercase
-    public bool IsVisible(CountryData country)
-    {
-        if (string.IsNullOrEmpty(SearchQuery))
-            return true;
-
-        if (country.name.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase))
-            return true;
-
-        if (country.name.ToString().StartsWith(SearchQuery))
-            return true;
-
-        return false;
-    }
 
 
 

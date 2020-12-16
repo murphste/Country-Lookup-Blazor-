@@ -21,15 +21,14 @@ namespace CountriesOfTheWorld.Pages
 
         [Parameter]
         public string SearchTerm { get; set; }
-        [Parameter]
-        public EventCallback<string> SearchTermChanged { get; set; }
+        /*public EventCallback<string> SearchTermChanged { get; set; }
 
         private async Task OnInputChange(ChangeEventArgs args)
         {
             SearchTerm = (string)args.Value;
             await SearchTermChanged.InvokeAsync(SearchTerm);
             await GetQueryDataAsync();
-        }
+        }*/
 
 
         private async Task GetQueryDataAsync()

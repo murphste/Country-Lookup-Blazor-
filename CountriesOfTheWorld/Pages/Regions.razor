@@ -2,36 +2,30 @@
 @inject HttpClient Http
 
 
-<h5>Country Data</h5>
+<h5>Data by World Region</h5>
+
+<div class="row">
+    <div class="col-sm-2">
+     <label><input type="radio" name="option" @bind="isEurope" @onclick="EuropeToggle">Europe </label>
+     </div>
+    <div class="col-sm-2">
+        <label><input type="radio" name="option" @bind="isAsia">Asia </label>
+    </div>
+    <div class="col-sm-2">
+        <label><input type="radio" name="option" @bind="isAfrica">Africa </label>
+    </div>
+    <div class="col-sm-2">
+        <label><input type="radio" name="option" @bind="isAmericas">Americas </label>
+    </div>
+    <div class="col-sm-2">
+        <label><input type="radio" name="option" @bind="isOceania">Oceania </label>
+    </div>
+</div>
 
 
 
-@*<div class="form-check-inline">
-    <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio" @bind="Region" @onclick="@GetDataAsync">Europe
-        
-    </label>
-</div>
-<div class="form-check-inline">
-    <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio" @bind="Region" @onclick="@GetDataAsync">Asia
-    </label>
-</div>
-<div class="form-check-inline">
-    <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio" @bind="Region" @onclick="@GetDataAsync">Africa
-    </label>
-</div>
-<div class="form-check-inline">
-    <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio" @bind="Region" @onclick="@GetDataAsync">Americas
-    </label>
-</div>
-<div class="form-check-inline">
-    <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio" @bind="Region" @onclick="@GetDataAsync">Oceana
-    </label>
-</div>*@
+
+
 
 
 
@@ -42,9 +36,6 @@
 else
 {
 
-
-
-    // User selection: choose Africa, Americas, Asia, Europe, Oceania
 
     <table class="table">
         <thead>
@@ -79,17 +70,62 @@ else
     private List<CountryData> data;
     private string errorMsg;
     private bool found;
-    public string Region { get; set; }
+    [Parameter]
+    public bool isEurope { get; set; }
+    [Parameter]
+    public bool isAsia { get; set; }
+    [Parameter]
+    public bool isAfrica { get; set; }
+    [Parameter]
+    public bool isAmericas { get; set; }
+    [Parameter]
+    public bool isOceania { get; set; }
+
+    public event Action OnRegionSelect;
 
 
-    //Regional GETS
+    private void EuropeToggle(MouseEventArgs e)
+    {
+        OnRegionSelect?.Invoke();
+        bool isClicked = false;
+    }
 
+    // following: visualstudiomagazine.com/articles/2018/10/01/blazor-event-handling.aspx
+
+    // Regional GETS
     private async Task GetDataAsync()
     {
         try
         {
-            string uri = "https://restcountries.eu/rest/v2/region/" + Region;
-            data = await Http.GetFromJsonAsync<List<CountryData>>(uri);
+
+            string europeUri = "https://restcountries.eu/rest/v2/region/europe";
+            string asiaUri = "https://restcountries.eu/rest/v2/region/asia";
+            string africaUri = "https://restcountries.eu/rest/v2/region/africa";
+            string americasUri = "https://restcountries.eu/rest/v2/region/americas";
+            string oceaniaUri = "https://restcountries.eu/rest/v2/region/oceania";
+            // Logic to select data based on user selected region
+
+            if (isEurope == true)
+            {
+                data = await Http.GetFromJsonAsync<List<CountryData>>(europeUri);
+            }
+            if (isAsia == true)
+            {
+                data = await Http.GetFromJsonAsync<List<CountryData>>(asiaUri);
+            }
+            if (isAfrica == true)
+            {
+                data = await Http.GetFromJsonAsync<List<CountryData>>(africaUri);
+            }
+            if (isAmericas == true)
+            {
+                data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
+            }
+            if (isOceania == true)
+            {
+                data = await Http.GetFromJsonAsync<List<CountryData>>(americasUri);
+            }
+
             errorMsg = String.Empty;
             found = true;
 
@@ -107,24 +143,6 @@ else
         await GetDataAsync();
     }
 
-
-    // Used for searching by user
-    private string SearchQuery { get; set; }
-
-    // Boolean method to display whether or not user enters letters in either upper or lowercase
-    public bool IsVisible(CountryData country)
-    {
-        if (string.IsNullOrEmpty(SearchQuery))
-            return true;
-
-        if (country.name.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase))
-            return true;
-
-        if (country.name.ToString().StartsWith(SearchQuery))
-            return true;
-
-        return false;
-    }
 
 
 }
