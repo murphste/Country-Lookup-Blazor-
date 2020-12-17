@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Components;
 using System.Web;
 using System.Text.Json;
 using System.Net.Http.Json;
+using System.Text.RegularExpressions;
 
 namespace CountriesOfTheWorld.Pages
 {
@@ -17,17 +18,41 @@ namespace CountriesOfTheWorld.Pages
         //private List<CountryData>? result;
         private string errorMsg;
         private bool found;
+
         //private string inputCountry;
+
 
         [Parameter]
         public string SearchTerm { get; set; }
-        /*public EventCallback<string> SearchTermChanged { get; set; }
 
-        private async Task OnInputChange(ChangeEventArgs args)
+
+
+
+        // Tried to enfoce validation here for only alphabetic characters on the setting of Search Term but kept causing an unhandled out of memory exception
+        // Give it a go yourself and see
+
+        /*Regex pattern = new Regex(@"^[A-Za-z]*$");
+
+        [Parameter]
+        public string SearchTerm
         {
-            SearchTerm = (string)args.Value;
-            await SearchTermChanged.InvokeAsync(SearchTerm);
-            await GetQueryDataAsync();
+            get
+            {
+                return SearchTerm;
+            }
+            set
+            {
+                *//*string pattern = "^[A-Za-z]*$";*//*
+                
+                if (pattern.IsMatch(SearchTerm))
+                {
+                    SearchTerm = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Search term is invalid");
+                }
+            }
         }*/
 
 

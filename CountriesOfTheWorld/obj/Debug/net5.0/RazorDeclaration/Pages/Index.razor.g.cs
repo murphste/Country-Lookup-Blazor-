@@ -82,7 +82,7 @@ using CountriesOfTheWorld.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 177 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\Pages\Index.razor"
+#line 159 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\Pages\Index.razor"
 using System.Linq;
 
 #line default
@@ -97,44 +97,18 @@ using System.Linq;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 177 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\Pages\Index.razor"
-                       
+#line 159 "C:\Users\Stephen's Laptop\Documents\College Files\Year 4\Semester 7\EAD - Enterprise App Development 1\CA3\Local Repo\ead_ca3\CountriesOfTheWorld\Pages\Index.razor"
+                   
 
 
-    // Need instance of Root as data (response obj) needs to contain an IEnumerable to iterate over
-    // Set this up to contain objects of the model class CountryData as below
-    public class Root
-    {
-        public List<CountryData> MyArray { get; set; }
-    }
+// Need instance of Root as data (response obj) needs to contain an IEnumerable to iterate over
+// Set this up to contain objects of the model class CountryData as below
+      public class Root
+      {
+      public List<CountryData> MyArray { get; set; }
+      }
 
-
-
-
-
-
-
-
-    // Used for searching by user
-    // Initalised to prevent null
-    private string SearchQuery { get; set; }
-
-    // Boolean method to display whether or not user enters letters in either upper or lowercase
-    public bool IsVisible(CountryData country)
-    {
-        if (string.IsNullOrEmpty(SearchQuery))
-            return true;
-
-        if (country.name.Contains(SearchQuery, StringComparison.OrdinalIgnoreCase))
-            return true;
-
-        if (country.name.ToString().StartsWith(SearchQuery))
-            return true;
-
-        return false;
-    }
-
-
+       
 
 #line default
 #line hidden
