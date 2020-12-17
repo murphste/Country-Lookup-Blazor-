@@ -106,7 +106,7 @@ using System.Linq;
 // Set this up to contain objects of the model class CountryData as below
       public class Root
       {
-      public List<CountryData> MyArray { get; set; }
+      public List<CountryData> CountryData { get; set; }
       }
 
        
