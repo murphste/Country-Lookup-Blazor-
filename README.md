@@ -1,4 +1,4 @@
-# countrylookup.github.io
+# https://countrylookupsm.azurewebsites.net/
 
 
 # C# Blazor (Client side) app
